@@ -10,15 +10,10 @@ kaggle入门题目，训练数据已经处理成向量并与标签一一对应�
 3.随笔  
 
 def analyse_data(dataMat):
-    # 求均值
     meanVals = np.mean(dataMat, axis=0)
-    # 减去均值
     meanRemoved = dataMat-meanVals
-    # 求协方差。
     covMat = np.cov(meanRemoved, rowvar=0)
-    # 用numpy里面的模块求特征值和特征向量。
     eigvals, eigVects = np.linalg.eig(np.mat(covMat))
-    # 对特征值进行从小到大排序
     eigValInd = np.argsort(eigvals)
     
     topNfeat = 100
