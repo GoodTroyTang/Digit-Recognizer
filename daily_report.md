@@ -8,7 +8,7 @@ kaggle入门题目，训练数据已经处理成向量并与标签一一对应�
   (1) 学习数据降维度  
 2.在数字识别上运用数据降维。  
 3.随笔  
-
+~~~ python
 def analyse_data(dataMat):  
     meanVals = np.mean(dataMat, axis=0)  
     meanRemoved = dataMat-meanVals  
@@ -26,4 +26,5 @@ def analyse_data(dataMat):
         line_cov_score = float(eigvals[eigValInd[i]])
         sum_cov_score += line_cov_score
         print('主成分：%s, 方差占比：%s%%, 累积方差占比：%s%%' % (format(i+1, '2.0f'), 
-            format(line_cov_score/cov_all_score*100, '4.2f'), format(sum_cov_score/cov_all_score*100, '4.1f')))
+            format(line_cov_score/cov_all_score*100, '4.2f'), format(sum_cov_score/cov_all_score*100, '4.1f')))  
+     ~~~
