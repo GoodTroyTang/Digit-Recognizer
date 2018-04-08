@@ -27,4 +27,4 @@ def analyse_data(dataMat):
         sum_cov_score += line_cov_score
         print('主成分：%s, 方差占比：%s%%, 累积方差占比：%s%%' % (format(i+1, '2.0f'), 
             format(line_cov_score/cov_all_score*100, '4.2f'), format(sum_cov_score/cov_all_score*100, '4.1f')))  
-     ~~~
+ ~~~
