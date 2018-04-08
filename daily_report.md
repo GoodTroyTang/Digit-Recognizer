@@ -7,4 +7,29 @@ kaggle入门题目，训练数据已经处理成向量并与标签一一对应�
 1.已完成  
   (1) 学习数据降维度  
 2.在数字识别上运用数据降维。  
-3.随笔
+3.随笔  
+
+### 分析数据。使用PCA降维，参考PCA降维代码。
+def analyse_data(dataMat):
+    # 求均值
+    meanVals = np.mean(dataMat, axis=0)
+    # 减去均值
+    meanRemoved = dataMat-meanVals
+    # 求协方差。
+    covMat = np.cov(meanRemoved, rowvar=0)
+    # 用numpy里面的模块求特征值和特征向量。
+    eigvals, eigVects = np.linalg.eig(np.mat(covMat))
+    # 对特征值进行从小到大排序
+    eigValInd = np.argsort(eigvals)
+    
+    topNfeat = 100
+    eigValInd = eigValInd[:-(topNfeat+1):-1]
+    cov_all_score = float(sum(eigvals))
+    sum_cov_score = 0
+    
+    # 遍历输出下面的主成分，方差占比以及累积方差。
+    for i in range(0, len(eigValInd)):
+        line_cov_score = float(eigvals[eigValInd[i]])
+        sum_cov_score += line_cov_score
+        print('主成分：%s, 方差占比：%s%%, 累积方差占比：%s%%' % (format(i+1, '2.0f'), 
+            format(line_cov_score/cov_all_score*100, '4.2f'), format(sum_cov_score/cov_all_score*100, '4.1f')))
