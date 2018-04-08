@@ -9,12 +9,12 @@ kaggle入门题目，训练数据已经处理成向量并与标签一一对应�
 2.在数字识别上运用数据降维。  
 3.随笔  
 
-def analyse_data(dataMat):
-    meanVals = np.mean(dataMat, axis=0)
-    meanRemoved = dataMat-meanVals
-    covMat = np.cov(meanRemoved, rowvar=0)
-    eigvals, eigVects = np.linalg.eig(np.mat(covMat))
-    eigValInd = np.argsort(eigvals)
+def analyse_data(dataMat):  
+    meanVals = np.mean(dataMat, axis=0)  
+    meanRemoved = dataMat-meanVals  
+    covMat = np.cov(meanRemoved, rowvar=0)  
+    eigvals, eigVects = np.linalg.eig(np.mat(covMat))  
+    eigValInd = np.argsort(eigvals)  
     
     topNfeat = 100
     eigValInd = eigValInd[:-(topNfeat+1):-1]
