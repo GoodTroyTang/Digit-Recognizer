@@ -58,13 +58,13 @@ kNN算法则是从训练集中找到和新数据最接近的k条记录，然后�
 ### @Fuyingtao
 **今日完成**
 ## kNN算法部分
-了解kNN算法的基本原理
+了解kNN算法的基本原理  
 Kaggle入门：练手项目参考(https://blog.csdn.net/bbbeoy/article/details/73274931).
 ## Python部分
-Python基本知识
-1） Python中文编码解码原理[参考博客]（https://www.cnblogs.com/OldJack/p/6658779.html）;（http://python.jobbole.com/81244/）.
-2） Python中的变量作用域问题[参考博客](http://www.jb51.net/article/86766.htm).
-3） Python中class和object对应的变量方法类型[参考博客](https://www.cnblogs.com/20150705-yilushangyouni-Jacksu/p/6238187.html).
+Python基本知识  
+1） Python中文编码解码原理[参考博客]（https://www.cnblogs.com/OldJack/p/6658779.  html）;（http://python.jobbole.com/81244/）.  
+2） Python中的变量作用域问题[参考博客](http://www.jb51.net/article/86766.htm).  
+3） Python中class和object对应的变量方法类型[参考博客](https://www.cnblogs.com/20150705-yilushangyouni-Jacksu/p/6238187.html).  
 **明日计划**
-实现kNN的Python实现
+实现kNN的Python实现  
 [参考博客](https://www.cnblogs.com/erbaodabao0611/p/7588840.html)
