@@ -1,34 +1,24 @@
-# 简介  
-这次项目主要以督促大家学习，提供一起交流学习的机会为目的。尝试使用各种算法(由易到难)解决手写体数字识别难题。  
-大家把每日学习心得都可以写进日报，包括学习到的理论算法知识，网上get到的好的代码，好的特征处理方法，或者自己看到的好的文章。  
-# 2018-04-08  
-### @GoodTroyTang  
-1.已完成  
-  (1) 学习数据降维度  
-2.在数字识别上运用数据降维。  
-3.随笔  
-~~~ python
-def analyse_data(dataMat):
-    # 求均值
-    meanVals = np.mean(dataMat, axis=0)
-    # 减去均值
-    meanRemoved = dataMat-meanVals
-    # 求协方差。
-    covMat = np.cov(meanRemoved, rowvar=0)
-    # 用numpy里面的模块求特征值和特征向量。
-    eigvals, eigVects = np.linalg.eig(np.mat(covMat))
-    # 对特征值进行从小到大排序
-    eigValInd = np.argsort(eigvals)
-    
-    topNfeat = 100
-    eigValInd = eigValInd[:-(topNfeat+1):-1]
-    cov_all_score = float(sum(eigvals))
-    sum_cov_score = 0
-    
-    # 遍历输出下面的主成分，方差占比以及累积方差。
-    for i in range(0, len(eigValInd)):
-        line_cov_score = float(eigvals[eigValInd[i]])
-        sum_cov_score += line_cov_score
-        print('主成分：%s, 方差占比：%s%%, 累积方差占比：%s%%' % (format(i+1, '2.0f'), 
-            format(line_cov_score/cov_all_score*100, '4.2f'), format(sum_cov_score/cov_all_score*100, '4.1f')))  
- ~~~
+knn算法：
+K最近邻分类算法，找到最近的k个邻居（样本），在前k个样本中选择频率最高的类别作为预测类别
+
+# assume we have Xtr_rows, Ytr, Xte_rows, Yte as before
+# recall Xtr_rows is 50,000 x 3072 matrix
+Xval_rows = Xtr_rows[:1000, :] # take first 1000 for validation
+Yval = Ytr[:1000]
+Xtr_rows = Xtr_rows[1000:, :] # keep last 49,000 for train
+Ytr = Ytr[1000:]
+
+# find hyperparameters that work best on the validation set
+validation_accuracies = []
+for k in [1, 3, 5, 10, 20, 50, 100]:
+  
+  # use a particular value of k and evaluation on validation data
+  nn = NearestNeighbor()
+  nn.train(Xtr_rows, Ytr)
+  # here we assume a modified NearestNeighbor class that can take a k as input
+  Yval_predict = nn.predict(Xval_rows, k = k)
+  acc = np.mean(Yval_predict == Yval)
+  print 'accuracy: %f' % (acc,)
+
+  # keep track of what works on the validation set
+  validation_accuracies.append((k, acc))
