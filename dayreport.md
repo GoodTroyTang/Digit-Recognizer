@@ -53,3 +53,18 @@ kNN算法则是从训练集中找到和新数据最接近的k条记录，然后�
 ### 2.2 类别的判定  　
 1）	投票决定：少数服从多数，近邻中哪个类别的点最多就分为该类。    　 
 2）	加权投票法：根据距离的远近，对近邻的投票进行加权，距离越近则权重越大（权重为距离平方的倒数）。   
+
+# 2018-04-09
+### @Fuyingtao
+**今日完成**
+##kNN算法部分
+了解kNN算法的基本原理
+Kaggle入门：练手项目参考(https://blog.csdn.net/bbbeoy/article/details/73274931).
+##Python部分
+Python基本知识
+1） Python中文编码解码原理[参考博客]（https://www.cnblogs.com/OldJack/p/6658779.html）;（http://python.jobbole.com/81244/）.
+2） Python中的变量作用域问题[参考博客](http://www.jb51.net/article/86766.htm).
+3） Python中class和object对应的变量方法类型[参考博客](https://www.cnblogs.com/20150705-yilushangyouni-Jacksu/p/6238187.html).
+**明日计划**
+实现kNN的Python实现
+[参考博客](https://www.cnblogs.com/erbaodabao0611/p/7588840.html)
