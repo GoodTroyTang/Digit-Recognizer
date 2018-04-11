@@ -92,6 +92,8 @@ Python基本知识
 
 
 
+
+
 [1] 陈希孺《数理统计简史》
 
 [2] Christopher Bishop《Pattern Recognition and Machine Learning》
