@@ -13,7 +13,7 @@ INPUT_NODE = 784  #输入节点数
 OUTPUT_NODE = 10  #输出节点数
 
 ##配置神经网络参数
-LAYER1_NODE = 500
+LAYER1_NODE = 500 #隐藏层节点数
 BATCH_SIZE = 100
 LEARNING_RATE_BASE = 0.8  #基础学习率
 LEARNING_RATE_DECAY = 0.99  #学习率的衰减率
